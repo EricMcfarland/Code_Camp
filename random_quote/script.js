@@ -1,6 +1,6 @@
 function randomQuote(){
   //pick and display a random quote
-  document.getElementById("quote").innerHTML =                                                    quotes[a=Math.floor(Math.random()*quotes.length)][0] + " -"+quotes[a][1];
+  document.getElementById("quote").innerHTML = quotes[a=Math.floor(Math.random()*quotes.length)][0] + " -"+quotes[a][1];
   
   //update twitter link with new quote
   $("a[href^='https://twitter.com/intent/tweet']").attr("href","https://twitter.com/intent/tweet?text="+quotes[a][0]+" -"+quotes[a][1]);
