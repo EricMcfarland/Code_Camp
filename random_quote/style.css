@@ -1,0 +1,107 @@
+body{
+  background-color: grey;
+}
+.titleBar{
+  color: white;
+  text-align:center;
+}
+button{
+  color:green;
+  background-color:red;
+  align:center;
+}
+.quoteButton{
+  text-align:center;
+}
+.test{
+  color:white;
+}
+.quote{
+  color:white;
+  font-size:55px;
+  text-align:center;
+}
+
+/*Overwatch Logo*/
+.center-div{
+  margin:0 auto;
+  width:1000px;
+  border: 3px solid;
+}
+.easyCircle{
+  width:200px;
+  height:200px;
+  border-style:solid;
+  border-radius:50%;
+  border:45px solid;
+  position:relative;
+  margin:0 auto;
+}
+.triangleRight {
+  position:absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #000;
+  border-left: 0px solid transparent;
+  border-right: 50px solid transparent;
+  margin:0px;
+  right:47px;
+  bottom:65px;
+}
+.triangleLeft {
+  position:absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #000;
+  border-left: 50px solid transparent;
+  border-right: 0px solid transparent;
+  margin:0px;
+  left:47px;
+  bottom:65px;
+}
+.neg45deg{
+  -webkit-transform:rotate(-45deg);
+}
+.pos45deg{
+  -webkit-transform:rotate(45deg);
+}
+.smallAngledRectangleLeft{
+  position:absolute;
+  width:15px;
+  height:75px;
+  background:grey;
+  top:-10px;
+  margin:0;
+  left:0px;
+  
+}
+.smallAngledRectangleRight{
+  position:absolute;
+  width:15px;
+  height:75px;
+  background:grey;
+  top:-10px;
+  margin:0;
+  right:0px;
+  
+}
+.angledRectangleLeft{
+  position:absolute;
+  width:45px;
+  height:95px;
+  left:25px;
+  background:black;
+  bottom:0px;
+  margin:0;
+  
+}
+.angledRectangleRight{
+  position:absolute;
+  width:45px;
+  height:95px;
+  right:25px;
+  background:black;
+  bottom:0px;
+  margin:0;
+  
+}
