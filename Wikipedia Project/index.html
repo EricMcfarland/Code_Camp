@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="C:/Users/Eric/Documents/Web Design/Code Camp/Wikipedia Project/script.js"></script>  
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <form id="normalSearch" action ="script.js"  method="post">
+        <!--value is default text, onmousedown is click, onblur is when clicked outside search bar, placeholder is ghost text once field is clicked-->
+        <input type="text" id="searchBox" value="" maxlength="50" onmousedown="" onblur="" autocomplete="on" placeholder="Search Wikipedia" /><input type="submit" id="searchBtn" value="Find" />
+    </form>
+
+    <form target="_blank" action ="https://en.wikipedia.org/wiki/Special:Random"  method="post">
+        <!--value is default text, onmousedown is click, onblur is when clicked outside search bar, placeholder is ghost text once field is clicked-->
+        <input type="submit" id="searchBtn" value="Search Random Wiki" />
+    </form>
+
+<div id="pages">
+
+</div>
+</body>
+
+</html>
