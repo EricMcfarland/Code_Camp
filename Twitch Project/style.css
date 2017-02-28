@@ -1,22 +1,29 @@
 #page {
-    background-color: lightblue;
-    width: 1080px;
-    height:100vh;
-    border: 3px black solid;
 }
 
 .streamBox{
-    height: 100px;
-    width: 400px;
-    background-color: grey;
-    border: 3px black solid
+    height: 10vh;
+    width: 100%;
+    border: 3px black solid;
+    float: right;
+}
+.streamBox:last-child{
+    /*stopped working*/
+    border-width: 0px 3px 3px 3px;
+    border-color: black;
+    border-style: solid;
 }
 .streamBox:hover{
-    height:150px;
+    height:13vh;
+}
+.streamBox:hover img{
+    height:10vh;
+    /*center image*/
 }
 img{
-    max-width: 40px;
-    max-height: 40px;
+    width:auto;
+    height:100%;
+    float: left;
 }
 div{
 }
@@ -27,10 +34,16 @@ a{
 
 .online{
    background-color:lightgreen; 
+
+}
+.offline{
+    background-color: grey;
 }
 
-#online{
-    border: 3px black solid;
-    width: 800px;
-    
+.channel-col{
+    width:35vw;
+    float:right;
+}
+.content{
+    text-align: center;
 }
