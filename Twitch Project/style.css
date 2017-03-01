@@ -1,29 +1,27 @@
-#page {
-}
 
 .streamBox{
-    height: 10vh;
+    height: 100px;
     width: 100%;
     border: 3px black solid;
     float: right;
+    position:relative;
 }
-.streamBox:last-child{
-    /*stopped working*/
-    border-width: 0px 3px 3px 3px;
-    border-color: black;
-    border-style: solid;
-}
+
 .streamBox:hover{
-    height:13vh;
+    height:135px;
 }
-.streamBox:hover img{
+.streamBox:hover .logo{
     height:10vh;
+    top: 10%;
+
     /*center image*/
 }
-img{
+.logo{
+    
     width:auto;
     height:100%;
     float: left;
+    position: absolute;
 }
 div{
 }
@@ -41,9 +39,18 @@ a{
 }
 
 .channel-col{
-    width:35vw;
+    width:300px;
     float:right;
 }
 .content{
+    position: absolute;
+    top:10%;
+    right:0;
+    width:200px;
+    padding: 0;
     text-align: center;
 }
+.name{
+    font-size: 24px;
+}
+

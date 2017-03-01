@@ -29,6 +29,7 @@ $(document).ready(function () {
                     buildSkeleton(val);
                     initializeDisplay(json);
                     fetchInfo(streamURL, null, isStreaming);
+                }else{
                 }
             })
         
@@ -51,7 +52,7 @@ function isStreaming(json) {
     if(json.stream!=null&json.status!=404){
         var streamer = json.stream.channel.name.toLowerCase();
         $('#' + streamer+'status').text("Online");
-        $('#' + streamer+'viewers').text(json.stream.viewers);
+        $('#' + streamer+'viewers').text("Viewers: " +json.stream.viewers);
         $('#'+streamer).addClass("online");
         $('#'+streamer).removeClass("offline");
         $('#'+streamer).parent().appendTo("#online");
@@ -75,8 +76,8 @@ function initializeDisplay(json) {               //turned into a callback functi
 function buildSkeleton(streamer){
     streamer = streamer.toLowerCase();
     $('#offline').append('<a href=# target="_blank"><div id=' + streamer + ' class="streamBox offline"></div></a>');
-    $('#' + streamer).append('<img src =#></img>');
-    $('#' + streamer).append('<div class="content"><div id='+streamer+'name></div><div id='+streamer+'game >Playing:</div><div id='+streamer+'status>Offline</div><div id='+streamer+'viewers></div></div>');                        //name
+    $('#' + streamer).append('<img class="logo" src =#></img>');
+    $('#' + streamer).append('<div class="content"><div id='+streamer+'name class="name"></div><div id='+streamer+'game class="game" >Playing:</div><div id='+streamer+'status class="status">Offline</div><div id='+streamer+'viewers></div></div>');                        //name
     
     // $('#' + streamer).append('<div id='+streamer+'game >Playing:</div>');           //game
     // $('#' + streamer).append('<div id='+streamer+'status>Offline</div>');                        //online
