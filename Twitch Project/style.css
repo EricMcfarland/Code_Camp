@@ -1,18 +1,40 @@
 
+#right-box{
+    float:right;
+    height:100%;
+    width:320px;
+    border-width: 3px 3px 3px 3px;
+    border-color: grey;
+    border-style: solid;
+    position: relative;
+    padding:0;
+}
+
+#swiper{
+    float:left;
+    width: 12px;
+    margin-bottom:100%;
+    background-color: lightgray;
+        
+}
+
 .streamBox{
     height: 100px;
     width: 100%;
-    border: 3px black solid;
+    border-width: 0px 3px 3px 3px;
+    border-color: black;
+    border-style: solid;
     float: right;
     position:relative;
 }
+.streamBox:first-child{
+    border-width: 3px 3px 3px 3px;
+    border-color: black;
+    border-style: solid;
+}
 
 .streamBox:hover{
-    height:135px;
-}
-.streamBox:hover .logo{
-    height:10vh;
-    top: 10%;
+    opacity:.9;
 
     /*center image*/
 }
@@ -23,11 +45,13 @@
     float: left;
     position: absolute;
 }
-div{
-}
+
 a{
     color: black;
     text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 .online{
@@ -53,4 +77,9 @@ a{
 .name{
     font-size: 24px;
 }
+.deletedAccount{
+    background-color:lightcoral;
+    font-size: 20px;
+}
+
 
