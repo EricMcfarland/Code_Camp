@@ -1,0 +1,27 @@
+.button{
+    background-color: lightgray;
+    width:40px;
+    height: 40px;
+    padding: 12px;
+    margin:20px;
+    display: inline-block;
+    text-align: center;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+#return{
+    width: 80px;
+}
+#display{
+    border: 3px black solid;
+    width: 100px;
+    height: 20px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+}
+div{
+    border: 1px solid black;
+}
