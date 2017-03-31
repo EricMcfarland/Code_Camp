@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var intervalID, intervalIDTwo, workDuration = 0, breakDuration;
+    var intervalID, intervalIDTwo, workDuration = 1, breakDuration=1;
     //Working
     $(".counter").on("click", function () {
 
@@ -17,63 +17,65 @@ $(document).ready(function () {
         }
     })
 
-    //Not fully Working
+    //Not fully Working. Clicking multiple times breaks things....
     $("#push").on('click', function () {
         var activeTimer = new Timer(workDuration, "display");
-        var inactiveTimer = new Timer(1, "display");
+        var duration = workDuration
 
         console.log("intID: " + intervalID);
 
         intervalID = setInterval(function () {
             console.log(activeTimer);
             activeTimer.countdown(function () {
-                var temp = activeTimer;
-                activeTimer=inactiveTimer;
-                inactiveTimer=temp;
-                console.log("ended");
-                console.log(activeTimer);
+                switch(activeTimer.type){
+                    case "work":
+                    //toggle css class here
+                        activeTimer.minute = breakDuration;
+                        activeTimer.type = "break";
+                        break
+                    case "break":
+                    //toggle css class here
+                        activeTimer.minute = workDuration;
+                        activeTimer.type = "work";
+                        break
+                }        
             })
         }, 250);
         console.log("intID: " + intervalID);
     })
 
-    //Working
+    //Working kind of. May work as intended if problem clicking push in sucession is fixed
     $("#reset").on('click', function () {
         clearInterval(intervalID);
         console.log("intID: " + intervalID);
+        $("#display").html("0:00");
 
     })
 
 })
 
-//Timer object to contain time and display quantities, as well as countdown methods
+//Timer object to contain time and this.display quantities, as well as countdown methods
 //Is this necessary?
 function Timer(duration, htmlElement) {
-    var that = this;
-    var minute = duration;
-    var second = 0;
-    var display = "";
-    var container = htmlElement;
+    this.minute = duration;
+    this.second = 0;
+    this.display = "";
+    this.container = htmlElement;
+    this.type = "work"
 
     Timer.prototype.countdown = function (callback) {
-        if (second == 0 && this.minute != 0) {
+        if (this.second == 0 && this.minute != 0) {
             this.minute--;
             console.log(this.minute);
-            second = 59;
-        } else if (this.minute >= 0 && second != 0) {
-            second--;
+            this.second = 59;
+        } else if (this.minute >= 0 && this.second != 0) {
+            this.second--;
         } else {
             callback();
             return false
         }
-        display = this.minute + ":" + second.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
-        console.log(display);
-        $("#" + container).html(display);
+        this.display = this.minute + ":" + this.second.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
+        console.log(this.display);
+        $("#" + this.container).html(this.display);
     };
-
-
-
-
-
-
 }
