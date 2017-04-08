@@ -8,12 +8,19 @@ table, tr, td{
 }
 .boardSpace{
     background-color : lightslategrey;
-    width:20px;
-    height:20px;
+    width:28px;
+    height:28px;
+    background-repeat: no-repeat;
 }
 .greenBackground{
     background-color:green;
 }
 .redBackground{
     background-color:red;
+}
+.emoteBorder{
+    border: 3px solid black;
+}
+img{
+    margin: 7px;
 }
